@@ -18,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 				vscode.window.showInformationMessage(message, { modal: true });
 			// 1秒后关闭弹窗
 			setTimeout(() => {
+				// @ts-ignore
 				vscode.window.activeInformationMessage?.dispose();
 			}, 1000);
 			// 如果没有 console.log 语句，提示没有
@@ -41,6 +42,7 @@ export function activate(context: vscode.ExtensionContext) {
 				vscode.window.showInformationMessage(message, { modal: true });
 				// 1秒后关闭弹窗
 				setTimeout(() => {
+					// @ts-ignore
 					vscode.window.activeInformationMessage?.dispose();
 				}, 1000);
 				// 重置 count 和 hasConsoleLogs
