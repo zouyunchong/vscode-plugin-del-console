@@ -9,7 +9,7 @@ use this plugin, you can del console in your project
     win：cmd+shift+f
     mac：cmd+shift+f
 
-## del console in floder(src/*)
+## del console in folder(src/*)
 ### use command 
     del-console-folder
 ### use shortcut key  

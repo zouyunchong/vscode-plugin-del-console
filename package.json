@@ -2,9 +2,15 @@
   "name": "del-console",
   "displayName": "del-console",
   "description": "del console in your project",
+  "publisher": "zouyunchong",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.84.0"
+  },
+  "icon": "logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zouyunchong/vscode-plugin-del-console"
   },
   "categories": [
     "Other"
@@ -31,7 +37,7 @@
       },
       {
         "command": "del-console-file",
-       "key": "ctrl+shift+f",
+        "key": "ctrl+shift+f",
         "mac": "cmd+shift+f",
         "win": "ctrl+shift+f"
       }
@@ -49,17 +55,20 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.84.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.54.0",
-    "typescript": "^5.3.2",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
     "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.8"
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.54.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.22.0"
   }
 }
