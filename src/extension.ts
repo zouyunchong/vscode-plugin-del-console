@@ -13,7 +13,17 @@ export function activate(context: vscode.ExtensionContext) {
 			const srcPath = rootPath + '/src';
 			deleteConsoleLogs(srcPath);
 			context.subscriptions.push(disposableFolder);
-			vscode.window.showInformationMessage(`已删除 ${count} 个 console.log 语句`);
+			// vscode.window.showInformationMessage(`已删除 ${count} 个 console.log 语句`);
+			const message = `已删除 ${count} 个 console.log 语句`;
+				vscode.window.showInformationMessage(message, { modal: true });
+			// 1秒后关闭弹窗
+			setTimeout(() => {
+				vscode.window.activeInformationMessage?.dispose();
+			}, 1000);
+			// 如果没有 console.log 语句，提示没有
+			// 重置 count 和 hasConsoleLogs
+			count = 0;
+			hasConsoleLogs = false;
 		} else {
 			console.error('没有打开的工作区');
 		}
@@ -27,7 +37,15 @@ export function activate(context: vscode.ExtensionContext) {
 			if (filePath) {
 				deleteConsoleLogsInFile(filePath);
 				context.subscriptions.push(disposableFile);
-				vscode.window.showInformationMessage(`已删除 ${count} 个 console.log 语句`);
+				const message = `已删除 ${count} 个 console.log 语句`;
+				vscode.window.showInformationMessage(message, { modal: true });
+				// 1秒后关闭弹窗
+				setTimeout(() => {
+					vscode.window.activeInformationMessage?.dispose();
+				}, 1000);
+				// 重置 count 和 hasConsoleLogs
+				count = 0;
+				hasConsoleLogs = false;
 			} else {
 				vscode.window.showInformationMessage('没有文件被打开');
 			}
